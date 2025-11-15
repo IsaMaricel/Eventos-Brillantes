@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eventos Brillantes - Organizadores de Eventos</title>
+    
+    <!-- Carga de Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Configuración de Tailwind y Fuente Inter -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        primary: '#6D28D9', // Un morado vibrante
+                        'primary-hover': '#5B21B6',
+                        secondary: '#F3F4F6', // Un gris claro para fondos
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- Estilos personalizados adicionales -->
+    <style>
+        /* Estilo para un desplazamiento suave */
+        html {
+            scroll-behavior: smooth;
+        }
+        /* Clases de utilidad personalizadas si fueran necesarias */
+        .hero-bg {
+            background-image: url('https://placehold.co/1600x900/6D28D9/FFFFFF?text=Tu+Evento+Perfecto');
+            background-size: cover;
+            background-position: center;
+        }
+    </style>
+</head>
+<body class="font-sans antialiased text-gray-800">
+
+    <!-- Contenedor principal -->
+    <div class="flex flex-col min-h-screen">
+
+        <!-- 1. Encabezado y Navegación -->
+        <header class="bg-white shadow-md sticky top-0 z-50">
+            <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+                <a href="#" class="text-3xl font-bold text-primary">
+                    Eventos Brillantes
+                </a>
+                <div class="hidden md:flex space-x-6">
+                    <a href="#inicio" class="text-gray-600 hover:text-primary transition-colors duration-300">Inicio</a>
+                    <a href="#servicios" class="text-gray-600 hover:text-primary transition-colors duration-300">Servicios</a>
+                    <a href="#galeria" class="text-gray-600 hover:text-primary transition-colors duration-300">Galería</a>
+                    <a href="#nosotros" class="text-gray-600 hover:text-primary transition-colors duration-300">Sobre Nosotros</a>
+                    <a href="#contacto" class="text-gray-600 hover:text-primary transition-colors duration-300">Contacto</a>
+                </div>
+                <!-- Botón de menú móvil -->
+                <button id="mobile-menu-button" class="md:hidden text-gray-700 focus:outline-none">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+                    </svg>
+                </button>
+            </nav>
+            <!-- Menú móvil (oculto por defecto) -->
+            <div id="mobile-menu" class="hidden md:hidden bg-white shadow-lg">
+                <a href="#inicio" class="block px-6 py-3 text-gray-600 hover:bg-primary hover:text-white">Inicio</a>
+                <a href="#servicios" class="block px-6 py-3 text-gray-600 hover:bg-primary hover:text-white">Servicios</a>
+                <a href="#galeria" class="block px-6 py-3 text-gray-600 hover:bg-primary hover:text-white">Galería</a>
+                <a href="#nosotros" class="block px-6 py-3 text-gray-600 hover:bg-primary hover:text-white">Sobre Nosotros</a>
+                <a href="#contacto" class="block px-6 py-3 text-gray-600 hover:bg-primary hover:text-white">Contacto</a>
+            </div>
+        </header>
+
+        <!-- Contenido principal -->
+        <main class="flex-grow">
+
+            <!-- 2. Sección Hero -->
+            <section id="inicio" class="hero-bg text-white py-40 md:py-60 relative">
+                <!-- Superposición oscura para legibilidad -->
+                <div class="absolute inset-0 bg-black opacity-50"></div>
+                <div class="container mx-auto px-6 text-center relative z-10">
+                    <h1 class="text-4xl md:text-6xl font-extrabold mb-4 leading-tight">Creamos Momentos Inolvidables</h1>
+                    <p class="text-lg md:text-2xl mb-8 font-light">Dejamos que tú disfrutes, nosotros nos encargamos de la magia.</p>
+                    <a href="#contacto" class="bg-primary text-white py-3 px-8 rounded-full font-bold text-lg hover:bg-primary-hover transition-all duration-300 shadow-lg transform hover:scale-105">
+                        Cotiza Tu Evento
+                    </a>
+                </div>
+            </section>
+
+            <!-- 3. Sección de Servicios -->
+            <section id="servicios" class="py-20 bg-secondary">
+                <div class="container mx-auto px-6">
+                    <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 text-gray-900">Nuestros Servicios</h2>
+                    <div class="grid md:grid-cols-3 gap-8">
+                        <!-- Tarjeta de Servicio 1: Bodas -->
+                        <div class="bg-white rounded-lg shadow-xl overflow-hidden transform hover:-translate-y-2 transition-transform duration-300">
+                            <img src="https://placehold.co/600x400/D1C4E9/6D28D9?text=Bodas" alt="[Imagen de una boda elegante]" class="w-full h-48 object-cover">
+                            <div class="p-6">
+                                <h3 class="text-2xl font-semibold mb-3 text-primary">Bodas de Ensueño</h3>
+                                <p class="text-gray-600 leading-relaxed">Desde la ceremonia hasta la fiesta, cuidamos cada detalle para tu gran día. Planificación completa, decoración y coordinación.</p>
+                            </div>
+                        </div>
+                        <!-- Tarjeta de Servicio 2: Eventos Corporativos -->
+                        <div class="bg-white rounded-lg shadow-xl overflow-hidden transform hover:-translate-y-2 transition-transform duration-300">
+                            <img src="https://placehold.co/600x400/C5CAE9/3F51B5?text=Corporativos" alt="[Imagen de un evento corporativo]" class="w-full h-48 object-cover">
+                            <div class="p-6">
+                                <h3 class="text-2xl font-semibold mb-3 text-primary">Eventos Corporativos</h3>
+                                <p class="text-gray-600 leading-relaxed">Lanzamientos de productos, conferencias y fiestas de fin de año. Proyectamos la imagen profesional de tu empresa.</p>
+                            </div>
+                        </div>
+                        <!-- Tarjeta de Servicio 3: Fiestas Privadas -->
+                        <div class="bg-white rounded-lg shadow-xl overflow-hidden transform hover:-translate-y-2 transition-transform duration-300">
+                            <img src="https://placehold.co/600x400/F8BBD0/C2185B?text=Fiestas" alt="[Imagen de una fiesta privada]" class="w-full h-48 object-cover">
+                            <div class="p-6">
+                                <h3 class="text-2xl font-semibold mb-3 text-primary">Fiestas y Celebraciones</h3>
+                                <p class="text-gray-600 leading-relaxed">Cumpleaños, aniversarios o cualquier motivo para celebrar. Creamos la atmósfera perfecta para que te diviertas.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 4. Sección de Galería -->
+            <section id="galeria" class="py-20 bg-white">
+                <div class="container mx-auto px-6">
+                    <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 text-gray-900">Nuestra Galería</h2>
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                        <!-- Imágenes de la galería. Usa 'aspect-square' para mantenerlas cuadradas -->
+                        <div class="aspect-square rounded-lg overflow-hidden shadow-lg">
+                            <img src="https://placehold.co/600x600/EDE7F6/5E35B1?text=Evento+1" alt="[Foto de evento pasado 1]" class="w-full h-full object-cover transition-transform duration-300 hover:scale-110">
+                        </div>
+                        <div class="aspect-square rounded-lg overflow-hidden shadow-lg">
+                            <img src="https://placehold.co/600x600/E3F2FD/1E88E5?text=Evento+2" alt="[Foto de evento pasado 2]" class="w-full h-full object-cover transition-transform duration-300 hover:scale-110">
+                        </div>
+                        <div class="aspect-square rounded-lg overflow-hidden shadow-lg">
+                            <img src="https://placehold.co/600x600/E8F5E9/43A047?text=Evento+3" alt="[Foto de evento pasado 3]" class="w-full h-full object-cover transition-transform duration-300 hover:scale-110">
+                        </div>
+                        <div class="aspect-square rounded-lg overflow-hidden shadow-lg">
+                            <img src="https://placehold.co/600x600/FFF3E0/F4511E?text=Evento+4" alt="[Foto de evento pasado 4]" class="w-full h-full object-cover transition-transform duration-300 hover:scale-110">
+                        </div>
+                        <div class="aspect-square rounded-lg overflow-hidden shadow-lg">
+                            <img src="https://placehold.co/600x600/FBE9E7/D84315?text=Evento+5" alt="[Foto de evento pasado 5]" class="w-full h-full object-cover transition-transform duration-300 hover:scale-110">
+                        </div>
+                        <div class="aspect-square rounded-lg overflow-hidden shadow-lg">
+                            <img src="https://placehold.co/600x600/FCE4EC/D81B60?text=Evento+6" alt="[Foto de evento pasado 6]" class="w-full h-full object-cover transition-transform duration-300 hover:scale-110">
+                        </div>
+                        <div class="aspect-square rounded-lg overflow-hidden shadow-lg">
+                            <img src="https://placehold.co/600x600/F9FBE7/C0CA33?text=Evento+7" alt="[Foto de evento pasado 7]" class="w-full h-full object-cover transition-transform duration-300 hover:scale-110">
+                        </div>
+                        <div class="aspect-square rounded-lg overflow-hidden shadow-lg">
+                            <img src="https://placehold.co/600x600/E0F7FA/00ACC1?text=Evento+8" alt="[Foto de evento pasado 8]" class="w-full h-full object-cover transition-transform duration-300 hover:scale-110">
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 5. Sección Sobre Nosotros -->
+            <section id="nosotros" class="py-20 bg-secondary">
+                <div class="container mx-auto px-6">
+                    <div class="flex flex-col md:flex-row items-center gap-12">
+                        <div class="md:w-1/2">
+                            <img src="https://placehold.co/600x400/F0F4C3/AFB42B?text=Nuestro+Equipo" alt="[El equipo de Eventos Brillantes]" class="rounded-lg shadow-2xl">
+                        </div>
+                        <div class="md:w-1/2 text-center md:text-left">
+                            <h2 class="text-3xl md:text-4xl font-bold mb-6 text-gray-900">Sobre Nosotros</h2>
+                            <p class="text-lg text-gray-700 mb-4 leading-relaxed">
+                                En <span class="font-bold text-primary">Eventos Brillantes</span>, somos más que organizadores; somos arquitectos de sueños. Nuestro equipo apasionado combina creatividad, experiencia y una meticulosa atención al detalle para transformar tu visión en una realidad espectacular.
+                            </p>
+                            <p class="text-lg text-gray-700 leading-relaxed">
+                                Creemos que cada evento es una historia única esperando ser contada. Nuestra misión es contar la tuya de la manera más hermosa y memorable posible.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 6. Sección de Contacto -->
+            <section id="contacto" class="py-20 bg-white">
+                <div class="container mx-auto px-6">
+                    <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 text-gray-900">Hablemos de Tu Evento</h2>
+                    <div class="max-w-3xl mx-auto">
+                        <!-- Mensaje de éxito del formulario -->
+                        <div id="form-success" class="hidden bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded-lg relative mb-6" role="alert">
+                            <strong class="font-bold">¡Mensaje enviado!</strong>
+                            <span class="block sm:inline"> Gracias por contactarnos. Te responderemos pronto.</span>
+                        </div>
+                        <!-- Mensaje de error del formulario -->
+                        <div id="form-error" class="hidden bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded-lg relative mb-6" role="alert">
+                            <strong class="font-bold">¡Error!</strong>
+                            <span class="block sm:inline"> Hubo un problema al enviar tu mensaje. Inténtalo de nuevo.</span>
+                        </div>
+                        
+                        <!-- Formulario de contacto -->
+                        <form id="contact-form" class="bg-secondary p-8 rounded-lg shadow-xl space-y-6">
+                            <div class="grid md:grid-cols-2 gap-6">
+                                <!-- Nombre -->
+                                <div>
+                                    <label for="name" class="block text-sm font-medium text-gray-700 mb-1">Nombre</label>
+                                    <input type="text" id="name" name="name" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-primary focus:border-primary" placeholder="Tu nombre completo">
+                                </div>
+                                <!-- Email -->
+                                <div>
+                                    <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Email</label>
+                                    <input type="email" id="email" name="email" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-primary focus:border-primary" placeholder="tu@email.com">
+                                </div>
+                            </div>
+                            <!-- Tipo de Evento (Opcional) -->
+                            <div>
+                                <label for="event-type" class="block text-sm font-medium text-gray-700 mb-1">Tipo de Evento</label>
+                                <select id="event-type" name="event-type" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-primary focus:border-primary bg-white">
+                                    <option>Selecciona una opción</option>
+                                    <option>Boda</option>
+                                    <option>Evento Corporativo</option>
+                                    <option>Fiesta Privada</option>
+                                    <option>Otro</option>
+                                </select>
+                            </div>
+                            <!-- Mensaje -->
+                            <div>
+                                <label for="message" class="block text-sm font-medium text-gray-700 mb-1">Mensaje</label>
+                                <textarea id="message" name="message" rows="5" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-primary focus:border-primary" placeholder="Cuéntanos más sobre tu evento..."></textarea>
+                            </div>
+                            <!-- Botón de envío -->
+                            <div class="text-center">
+                                <button type="submit" class="bg-primary text-white py-3 px-10 rounded-full font-bold text-lg hover:bg-primary-hover transition-all duration-300 shadow-lg transform hover:scale-105">
+                                    Enviar Mensaje
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- 7. Footer -->
+        <footer class="bg-gray-900 text-gray-400 py-12">
+            <div class="container mx-auto px-6 text-center">
+                <div class="mb-4">
+                    <a href="#" class="text-2xl font-bold text-white">Eventos Brillantes</a>
+                </div>
+                <div class="flex justify-center space-x-6 mb-6">
+                    <!-- Iconos de redes sociales (SVG en línea) -->
+                    <a href="#" class="hover:text-white" aria-label="Facebook">
+                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H7v-3h3V9.5C10 6.5 11.93 5 14.5 5c1.24 0 2.3.09 2.61.13v2.64h-1.57c-1.3 0-1.54.62-1.54 1.5v2.23h3.13l-.4 3H15.6v6.8c4.56-.93 8-4.96 8-9.8z"/></svg>
+                    </a>
+                    <a href="#" class="hover:text-white" aria-label="Instagram">
+                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2c2.72 0 3.05.01 4.1.06 1.06.05 1.79.22 2.42.47.65.25 1.2.58 1.76 1.14.56.56.89 1.11 1.14 1.76.25.63.42 1.36.47 2.42.05 1.05.06 1.38.06 4.1s-.01 3.05-.06 4.1c-.05 1.06-.22 1.79-.47 2.42-.25.65-.58 1.2-1.14 1.76-.56.56-1.11.89-1.76 1.14-.63.25-1.36.42-2.42.47-1.05.05-1.38.06-4.1.06s-3.05-.01-4.1-.06c-1.06-.05-1.79-.22-2.42-.47-.65-.25-1.2-.58-1.76-1.14-.56-.56-.89-1.11-1.14-1.76-.25-.63-.42-1.36-.47-2.42-.05-1.05-.06-1.38-.06-4.1s.01-3.05.06-4.1c.05-1.06.22-1.79.47-2.42.25-.65.58-1.2 1.14-1.76.56-.56 1.11-.89 1.76-1.14.63-.25 1.36-.42 2.42-.47C8.95 2.01 9.28 2 12 2zm0 1.8c-2.69 0-2.99.01-4.04.06-1.01.05-1.63.21-2.2.46-.59.25-1.03.58-1.48 1.03-.45.45-.78.89-1.03 1.48-.25.57-.41 1.19-.46 2.2-.05 1.05-.06 1.35-.06 4.04s.01 2.99.06 4.04c.05 1.01.21 1.63.46 2.2.25.59.58 1.03 1.03 1.48.45.45.89.78 1.48 1.03.57.25 1.19.41 2.2.46 1.05.05 1.35.06 4.04.06s2.99-.01 4.04-.06c1.01-.05 1.63-.21 2.2-.46.59-.25 1.03-.58 1.48-1.03.45-.45.78-.89 1.03-1.48.25-.57.41-1.19.46-2.2.05-1.05.06-1.35.06-4.04s-.01-2.99-.06-4.04c-.05-1.01-.21-1.63-.46-2.2-.25-.59-.58-1.03-1.03-1.48-.45-.45-.89-.78-1.48-1.03-.57-.25-1.19-.41-2.2-.46C14.99 3.81 14.69 3.8 12 3.8zm0 3.6c-2.48 0-4.47 2-4.47 4.47s2 4.47 4.47 4.47 4.47-2 4.47-4.47-2-4.47-4.47-4.47zm0 7.13c-1.47 0-2.67-1.19-2.67-2.67s1.19-2.67 2.67-2.67 2.67 1.19 2.67 2.67-1.19 2.67-2.67 2.67zm4.7-7.3c0-.5.4-.9.9-.9s.9.4.9.9-.4.9-.9.9-.9-.4-.9-.9z"/></svg>
+                    </a>
+                    <a href="#" class="hover:text-white" aria-label="LinkedIn">
+                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M6.5 21.5h-5v-13h5v13zM4 6.5C2.6 6.5 1.5 5.4 1.5 4S2.6 1.5 4 1.5 6.5 2.6 6.5 4 5.4 6.5 4 6.5zM21.5 21.5h-5v-6.6c0-1.7-.6-2.8-2.1-2.8-1.2 0-1.8.8-2.1 1.5-.1.3-.2.6-.2 1v6.9h-5V8.5h5v2.2c.7-1.1 1.9-2.6 4.5-2.6 3.3 0 5.8 2.1 5.8 6.6V21.5z"/></svg>
+                    </a>
+                </div>
+                <p class="text-sm">
+                    &copy; <span id="current-year"></span> Eventos Brillantes. Todos los derechos reservados.
+                </p>
+            </div>
+        </footer>
+
+    </div>
+
+    <!-- Script para la funcionalidad -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const menuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const contactForm = document.getElementById('contact-form');
+            const formSuccess = document.getElementById('form-success');
+            const formError = document.getElementById('form-error');
+
+            // 1. Funcionalidad del menú móvil
+            menuButton.addEventListener('click', function() {
+                mobileMenu.classList.toggle('hidden');
+            });
+
+            // 2. Cierre del menú móvil al hacer clic en un enlace
+            mobileMenu.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileMenu.classList.add('hidden');
+                });
+            });
+
+            // 3. Simulación de envío de formulario
+            contactForm.addEventListener('submit', function(e) {
+                e.preventDefault(); // Prevenir el envío real
+                
+                // Ocultar mensajes previos
+                formSuccess.classList.add('hidden');
+                formError.classList.add('hidden');
+
+                // Simular un pequeño retraso (como si se estuviera enviando)
+                const submitButton = contactForm.querySelector('button[type="submit"]');
+                submitButton.disabled = true;
+                submitButton.textContent = 'Enviando...';
+
+                setTimeout(() => {
+                    // Simular éxito (en un caso real, esto dependería de la respuesta del servidor)
+                    const isSuccess = true; // Cambiar a false para probar el error
+
+                    if (isSuccess) {
+                        formSuccess.classList.remove('hidden');
+                        contactForm.reset(); // Limpiar el formulario
+                    } else {
+                        formError.classList.remove('hidden');
+                    }
+
+                    // Restaurar botón
+                    submitButton.disabled = false;
+                    submitButton.textContent = 'Enviar Mensaje';
+
+                }, 1500); // 1.5 segundos de retraso
+            });
+
+            // 4. Establecer el año actual en el footer
+            document.getElementById('current-year').textContent = new Date().getFullYear();
+        });
+    </script>
+</body>
+</html>
